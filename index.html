@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PING-PONG — 圆形砖块挑战</title>
+<style>
+  :root { --bg:#07111c; --panel:#0d1a28; --line:#1e3347; --text:#e6eef6; --dim:#8aa0b4; --gold:#f4b942; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.7; }
+  main { max-width:960px; margin:0 auto; padding:56px 24px 72px; }
+  header { text-align:center; margin-bottom:40px; }
+  h1 { font-size:44px; letter-spacing:.12em; margin:0; }
+  .sub { color:var(--dim); letter-spacing:.3em; font-size:13px; margin-top:6px; }
+  .lead { max-width:620px; margin:20px auto 28px; color:var(--dim); }
+  .btn { display:inline-block; background:var(--gold); color:#111; font-weight:700; letter-spacing:.15em; padding:14px 40px; border-radius:999px; text-decoration:none; }
+  .btn:hover { filter:brightness(1.08); }
+  .grid { display:grid; grid-template-columns:minmax(0,340px) 1fr; gap:36px; align-items:start; }
+  @media (max-width:760px){ .grid { grid-template-columns:1fr; } video { max-width:340px; margin:0 auto; display:block; } }
+  video { width:100%; border-radius:14px; border:1px solid var(--line); background:#000; }
+  .note { color:var(--dim); font-size:13px; margin-top:10px; }
+  h2 { font-size:18px; letter-spacing:.08em; margin:0 0 10px; }
+  section { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px 22px; margin-bottom:18px; }
+  ul { margin:0; padding-left:20px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th, td { border-bottom:1px solid var(--line); padding:6px 8px; text-align:center; }
+  th { color:var(--dim); font-weight:600; }
+  kbd { background:#1a2b3c; border:1px solid var(--line); border-radius:4px; padding:0 6px; font-size:13px; }
+  footer { text-align:center; color:var(--dim); font-size:13px; margin-top:40px; }
+  footer a { color:var(--gold); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>PING-PONG</h1>
+    <div class="sub">CIRCULAR BRICK CHALLENGE</div>
+    <p class="lead">竖屏弹球打砖块。球要对准圆形竞技场底部的缺口钻进去，再绕过内挡条，清空 3379 块砖才算过关。共 6 关，缺口一关比一关窄。</p>
+    <a class="btn" href="web/">开始游戏</a>
+  </header>
+
+  <div class="grid">
+    <div>
+      <video src="assets/ping-pong-all-clear.mp4" poster="assets/poster.jpg" controls muted playsinline preload="metadata"></video>
+      <p class="note">6 关通关录像。由自动挡板程序（bot）打通，不是真人试玩；每关前 6 秒原速，之后 8×–64× 快进，倍速标在右下角。</p>
+    </div>
+    <div>
+      <section>
+        <h2>操作</h2>
+        <ul>
+          <li>拖动画面，或按 <kbd>←</kbd> <kbd>→</kbd>（<kbd>A</kbd> <kbd>D</kbd>）移动挡板</li>
+          <li>过关后点画布或按 <kbd>R</kbd> 进入下一关</li>
+          <li>掉球不失败，只记一次 ATTEMPT</li>
+        </ul>
+      </section>
+      <section>
+        <h2>道具</h2>
+        <ul>
+          <li><b>W</b> 加宽挡板 5 秒</li>
+          <li><b>S</b> 球速降到 55%，5 秒</li>
+          <li><b>×3</b> 每颗球分裂成三颗，上限 2400 颗</li>
+        </ul>
+      </section>
+      <section>
+        <h2>关卡</h2>
+        <table>
+          <tr><th>关卡</th><th>缺口</th><th>挡条初始长度</th></tr>
+          <tr><td>1</td><td>96 px</td><td>69 px</td></tr>
+          <tr><td>2</td><td>54 px</td><td>94 px</td></tr>
+          <tr><td>3</td><td>27 px</td><td>120 px</td></tr>
+          <tr><td>4</td><td>23 px</td><td>145 px</td></tr>
+          <tr><td>5</td><td>20 px</td><td>159 px</td></tr>
+          <tr><td>6</td><td>17 px</td><td>171 px</td></tr>
+        </table>
+      </section>
+    </div>
+  </div>
+
+  <footer>纯 HTML / Canvas，无需安装 · <a href="https://github.com/waterinfor/Game-PING_PONG">源码</a> · MIT License</footer>
+</main>
+</body>
+</html>
