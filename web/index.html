@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>PING-PONG — Circular Brick Challenge</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="game"></canvas>
+
+  <!-- Start overlay -->
+  <div id="startScreen" class="overlay">
+    <h1 class="title">PING-PONG</h1>
+    <p class="subtitle">CIRCULAR BRICK CHALLENGE</p>
+    <div class="hint">
+      <p>拖动屏幕移动挡板，从内部横挡两端绕入砖区</p>
+      <p>6 关挑战 · 缺口逐级收窄 · 每次入圆首击加长内挡</p>
+      <p class="dim">W · 加宽挡板　S · 减速　×3 · 三倍球</p>
+    </div>
+    <button id="startBtn" class="btn">START</button>
+  </div>
+
+  <!-- ALL CLEAR is drawn on the canvas inside the arena; no full-screen modal. -->
+
+</div>
+<script src="game.js"></script>
+</body>
+</html>
